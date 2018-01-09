@@ -12801,7 +12801,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   profit: {fileID: 212103992}
-  maintenance: {fileID: 297826530}
+  MoneyLost: {fileID: 297826530}
   funds: {fileID: 1544695771}
   politicalpower: {fileID: 738493174}
   powerproduced: {fileID: 1807594343}
