@@ -26,6 +26,7 @@ public class updatebuttons : MonoBehaviour {
         powerproduced.GetComponent<Text>().text = "Power Produced: " + (4400 * (PlayerPrefs.GetInt("Coal")) + (3300 * PlayerPrefs.GetInt("Wind")) + (5000 * PlayerPrefs.GetInt("Oil"))) + "";
         price.GetComponent<Text>().text = "Price for Electricity ($): " + PlayerPrefs.GetInt("price");
         pollution.GetComponent<Text>().text = "Pollution:" + PlayerPrefs.GetInt("Pollution") + "";
+        Debug.Log("poweeeeeerrrrrrr"+(PlayerPrefs.GetInt("Coal")) + (3300 * PlayerPrefs.GetInt("Wind")) + (5000 * PlayerPrefs.GetInt("Oil")));
     }
    public void Onclick()
     {
