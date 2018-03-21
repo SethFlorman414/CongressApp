@@ -22,16 +22,18 @@ public class Pollution : MonoBehaviour {
 
         if (PlayerPrefs.GetInt("Oil") >= 1 || PlayerPrefs.GetInt("Coal") >= 1) 
         {
-
             pollution += Mathf.RoundToInt(PlayerPrefs.GetInt("Oil") * scaler) +Mathf.RoundToInt(PlayerPrefs.GetInt("Coal") * scaler);
+            pollution -= Mathf.RoundToInt(PlayerPrefs.GetInt("Scrubber"));
+            if(pollution < 0)
+            {
+                pollution = 0;
+            }
             PlayerPrefs.SetInt("Pollution", pollution);
         }
 
         if(pollution >= 100)
         {
-
             SceneManager.LoadScene("EndScene");
-
         }
 
 		

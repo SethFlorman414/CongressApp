@@ -5,9 +5,8 @@ using UnityEngine.UI;
 public class keeptrack : MonoBehaviour
 {
     string previous;
-    public int Coal_price;
-    public int Oil_price;
-    public int Wind_price;
+    public int Coal_price, Oil_price, Wind_price, Scrub_price, Hydro_price;
+
     bool sale = false;
     bool valid = false;
     // Use this for initialization
@@ -23,6 +22,7 @@ public class keeptrack : MonoBehaviour
         Debug.Log("coal" + PlayerPrefs.GetInt("Coal"));
         Debug.Log("Oil" + PlayerPrefs.GetInt("Oil"));
         Debug.Log("Wind" + PlayerPrefs.GetInt("Wind"));
+        Debug.Log("Scrubber" + PlayerPrefs.GetInt("Scrubber"));
     }
     public void Change()
     {
@@ -85,7 +85,7 @@ public class keeptrack : MonoBehaviour
                     gameObject.GetComponent<Dropdown>().value = 0;
                 }
             }
-            
+
             if (gameObject.GetComponent<Dropdown>().captionText.text == "Coal")
             {
                 if (PlayerPrefs.GetInt("TotalFunds") - Coal_price >= 0)
@@ -98,7 +98,32 @@ public class keeptrack : MonoBehaviour
                     gameObject.GetComponent<Dropdown>().value = 0;
                 }
             }
-        }
+            if (gameObject.GetComponent<Dropdown>().captionText.text == "Scrubber")
+            {
+                if (PlayerPrefs.GetInt("TotalFunds") - Scrub_price >= 0)
+                {
+                    Debug.Log("SOLD");
+                    PlayerPrefs.SetInt("TotalFunds", PlayerPrefs.GetInt("TotalFunds") - Scrub_price);
+                }
+                else
+                {
+                    gameObject.GetComponent<Dropdown>().value = 0;
 
+                }
+            }
+            if (gameObject.GetComponent<Dropdown>().captionText.text == "Hydro")
+            {
+                if (PlayerPrefs.GetInt("TotalFunds") - Hydro_price >= 0)
+                {
+                    Debug.Log("SOLD");
+                    PlayerPrefs.SetInt("TotalFunds", PlayerPrefs.GetInt("TotalFunds") - Hydro_price);
+                }
+                else
+                {
+                    gameObject.GetComponent<Dropdown>().value = 0;
+
+                }
+            }
+        }
     }
 }

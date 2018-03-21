@@ -4,10 +4,7 @@ using UnityEngine;
 
 public class prices : MonoBehaviour {
 	
-    public int oil;
-    public int wind;
-    public int coal;
-    public int price;
+    public int oil, wind, coal, price, hydro;
 
     // Use this for initialization
     void Start () {
@@ -28,6 +25,8 @@ public class prices : MonoBehaviour {
 
 		PlayerPrefs.SetInt("TotalFunds", PlayerPrefs.GetInt("TotalFunds") + (PlayerPrefs.GetInt("Oil") * oil) * PlayerPrefs.GetInt("price"));
 
+        PlayerPrefs.SetInt("TotalFunds", PlayerPrefs.GetInt("TotalFunds") + (PlayerPrefs.GetInt("Hydro") * hydro) * PlayerPrefs.GetInt("price"));
+
         PlayerPrefs.SetInt("MoneyLost", (PlayerPrefs.GetInt("Oil") * oil * 80) + (PlayerPrefs.GetInt("Wind") * wind * 30)
                 + (PlayerPrefs.GetInt("Coal") * coal * 70));
 
@@ -37,6 +36,6 @@ public class prices : MonoBehaviour {
     }
     public int DoTheMath()
     {
-        return (((PlayerPrefs.GetInt("Coal") * coal) * PlayerPrefs.GetInt("price")) + ((PlayerPrefs.GetInt("Oil") * oil) * PlayerPrefs.GetInt("price")) +((PlayerPrefs.GetInt("Wind") * wind * price)) );
+        return (((PlayerPrefs.GetInt("Coal") * coal) * PlayerPrefs.GetInt("price")) + ((PlayerPrefs.GetInt("Oil") * oil) * PlayerPrefs.GetInt("price"))+ (PlayerPrefs.GetInt("Hydro") * hydro) + ((PlayerPrefs.GetInt("Wind") * wind * price)) );
     }
 }

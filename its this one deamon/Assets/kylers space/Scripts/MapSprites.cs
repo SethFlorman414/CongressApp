@@ -17,19 +17,28 @@ public class MapSprites : MonoBehaviour {
         Debug.Log(gameObject.GetComponent<Dropdown>().captionText.text);
         if (gameObject.GetComponent<Dropdown>().captionText.text == "Wind")
         {
-            Debug.Log("fooooooooooo");
+            Debug.Log("foooooooooooq");
             gameObject.GetComponent<Image>().sprite = conversation[0];
         }
         if (gameObject.GetComponent<Dropdown>().captionText.text == "Oil")
         {
-            Debug.Log("fooooooooooooooooooooooooooooooooooooooooooooooooooooooo");
+            Debug.Log("fooooooooooooooooooooooooooooooooooooooooooooooooooooooolllllll");
             gameObject.GetComponent<Image>().sprite = conversation[1];
         }
         if (gameObject.GetComponent<Dropdown>().captionText.text == "Coal")
         {
-            Debug.Log("fooooooooooooooooooooooooooooooooooooooooooooooooooooooo");
+            Debug.Log("foooooooooooooooooooooooooooooooooooooooooooooooooooooookkkkkkkkkkkkkkkk");
             gameObject.GetComponent<Image>().sprite = conversation[2];
         }
-        
+        if (gameObject.GetComponent<Dropdown>().captionText.text == "Scrubber")
+        {
+            Debug.Log("foooooooooooooooooooooooooooooooooooooooooooooob");
+            gameObject.GetComponent<Image>().sprite = conversation[3];
+        }
+        if (gameObject.GetComponent<Dropdown>().captionText.text == "Hydro")
+        {
+            Debug.Log("foooooooooooooooooooooooooooooooooooooooooooooob");
+            gameObject.GetComponent<Image>().sprite = conversation[4];
+        }
     }
 }

@@ -1,4 +1,4 @@
-1) Fix the power PlayerPref so the player can see how much power is produced.
+1) Fix the power PlayerPref so the player can see how much power is produced.-fixed
 
 2) Allow for the player to track and fix the pollution problem but still producing pollution
 	Also to allow for pollution to respond by how many factories the player owns. Don't constantly increase. 
@@ -8,7 +8,7 @@
 	
 4) Allow for the residence bill to increase for price of electricity. Add that money to profits made.
 
-5) Fix the money lost section so the player can see how much money is lost the previous month. 
+5) Fix the money lost section so the player can see how much money is lost the previous month. x
 
 
 
